@@ -5,30 +5,29 @@ let saved_id = document.getElementById("saved_id");
 button.addEventListener("click", buttonClick);
 
 /**
- * 
- * @returns localstrageへ登録IDをJSONで保存する。
+ * LocalStorageへ登録IDをJSONで保存する。
+ * @returns bool
  */
 function buttonClick() {
+  // 空白なら処理しない。
   if (twitter_id.value == "") {
     return false;
   }
 
-  let str = twitter_id.value.trim();
-
   // ＠が文頭にあったら消す。
-  renamed_id = str.replace(/^@/, "");
 
+  let renamed_id = twitter_id.value.trim().replace(/^@/, "");
   let twitter_id_json = localStorage.getItem("twitter_id_json");
 
   // twitter_id_jsonが存在する場合。
-  if (JSON.parse(twitter_id_json)) {
-    let arr = JSON.parse(twitter_id_json);
+  if ((arr = JSON.parse(twitter_id_json))) {
     if (arr.includes(renamed_id)) {
-      return;
+      // 既存IDなら処理しない。
+      return false;
     }
   } else {
-    let array = [];
-    let json = JSON.stringify(array, undefined, 1);
+    let arr = [];
+    let json = JSON.stringify(arr, undefined, 1);
     localStorage.setItem("twitter_id", json);
     twitter_id_json = localStorage.getItem("twitter_id");
   }
