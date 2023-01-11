@@ -12,10 +12,17 @@
       <p>ID登録したいTwitter IDを記入してください。</p>
     </div>
     <input type="text" name="twitter_id" id="twitter_id" />
+    <!-- 背景色も登録 -->
+    <!-- <input type="color" name="twitter_bg" id="twitter_bg" value="" /> -->
     <button id="store_btn">ID登録</button>
     <div>
       <p>登録されているID</p>
+
+      <table id="id_table"></table>
       <p id="saved_id"></p>
+
+      <!-- IDとその横に削除ボタン -->
+      <p>※編集したい場合は一度削除してから再度登録してください。</p>
     </div>
     <script src="popup.js"></script>
   </body>

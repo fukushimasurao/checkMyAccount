@@ -11,5 +11,8 @@ window.onload = function () {
   // popup.htmlのinput要素に書いたテキストを取得
   chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     console.log(msg.send);
+    //   twitter_idと受け取ったJSONの中身を比較
+    //   もしあれば処理をする。
+    //   背景色を変える。
   });
 };
