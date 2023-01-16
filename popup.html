@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="popup.css" />
-    <title>Document</title>
+    <title>Check My Account</title>
   </head>
   <body>
+    <h1 class="text-3xl font-bold underline text-amber-600">
+      Check My Account
+    </h1>
     <div>
       <p>ID登録したいTwitter IDを記入してください。</p>
     </div>
@@ -15,8 +18,10 @@
     <!-- 背景色も登録 -->
     <!-- <input type="color" name="twitter_bg" id="twitter_bg" value="" /> -->
     <button id="store_btn">ID登録</button>
+    <span id="alert" class="alert-red"></span>
     <div>
       <p>登録されているID</p>
+      <ul class="task_list list-decimal" id="task_list"></ul>
 
       <table id="id_table"></table>
       <p id="saved_id"></p>
